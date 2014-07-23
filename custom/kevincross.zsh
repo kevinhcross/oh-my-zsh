@@ -11,6 +11,8 @@ do_in_all() { TOP_DIR=$(pwd); for dir in $(find . -maxdepth 1 -type d  | grep -v
 svn_co_project() { CMD=$(echo $1 | ruby -F/ -ane 'chomp; puts "svn co " + $_ + " " + $F[-2]'); $CMD; }
 make_sha() { sha256sum $1 > ${1}.sha256sum; }
 rm_local_mods() { svn st * | grep "^?" | awk '{print $2;}' | xargs rm -rfv; }
+jenkins_trigger() { echo "http://ci-server/jenkins/git/notifyCommit?url=$(git config -l | grep remote.origin.url | cut -f2 -d'=')"; }
+jenkins_trigger_arg() { echo "http://ci-server/jenkins/git/notifyCommit?url=$1"; }
 
 ##########################################################################################
 # aliases
