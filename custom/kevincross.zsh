@@ -13,6 +13,7 @@ make_sha() { sha256sum $1 > ${1}.sha256sum; }
 rm_local_mods() { svn st * | grep "^?" | awk '{print $2;}' | xargs rm -rfv; }
 jenkins_trigger() { echo "http://ci-server/jenkins/git/notifyCommit?url=$(git config -l | grep remote.origin.url | cut -f2 -d'=')"; }
 jenkins_trigger_arg() { echo "http://ci-server/jenkins/git/notifyCommit?url=$1"; }
+git_get_http() { git remote -v | grep fetch | awk '{print $2}' | sed 's/:/\//' | sed 's/git@/http:\/\//'; }
 
 ##########################################################################################
 # aliases
