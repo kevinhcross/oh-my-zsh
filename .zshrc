@@ -85,5 +85,5 @@ source ~/.nvm/nvm.sh
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "/home/kevincross/.gvm/bin/gvm-init.sh" ]] && source "/home/kevincross/.gvm/bin/gvm-init.sh"
+[[ -s "$HOME/.gvm/bin/gvm-init.sh" ]] && source "$HOME/.gvm/bin/gvm-init.sh"
 
