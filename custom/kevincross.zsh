@@ -15,6 +15,7 @@ jenkins_trigger() { echo "http://ci-server/jenkins/git/notifyCommit?url=$(git co
 jenkins_trigger_arg() { echo "http://ci-server/jenkins/git/notifyCommit?url=$1"; }
 git_get_http() { git remote -v | grep fetch | awk '{print $2}' | sed 's/:/\//' | sed 's/git@/http:\/\//'; }
 
+
 ##########################################################################################
 # aliases
 ##########################################################################################
@@ -33,3 +34,5 @@ alias ag="ag --pager 'less -iR'"
 
 alias vlog='ls -rt1 out*log | tail -n 1 | xargs less -iR'
 alias open='gnome-open'
+
+alias git_browse="open $(git remote -v | grep push | cut -f2 | cut -f1 -d' ' | sed 's/:/\//;s/git@/http:\/\//; s/\.git$//;')"
