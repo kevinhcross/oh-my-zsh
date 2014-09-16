@@ -84,6 +84,8 @@ export COE_USERNAME=kevincross
 
 export M2_HOME=$HOME/dev_apps/maven/current
 export PATH=$PATH:$M2_HOME/bin
+export PATH=$PATH:$HOME/projects/my_stuff/sandpit/ruby:$HOME/projects/my_stuff/sandpit/groovy
+
 
 
 source ~/.nvm/nvm.sh
