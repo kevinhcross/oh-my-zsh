@@ -7,7 +7,7 @@ ZSH_THEME="khcsvn"
 # functions
 ##########################################################################################
 gvi() { gvim --remote-silent $@ & }
-do_in_all() { TOP_DIR=$(pwd); for dir in $(find . -maxdepth 1 -type d  | grep -v "\.$"); do echo "#################################################"; echo $dir;  cd $dir; $@; cd $TOP_DIR; done; }
+do_in_all() { TOP_DIR=$(pwd); for dir in $(find . -maxdepth 1 -type d  | grep -v "\.$"); do echo; echo "## $dir ###################################################################################################################################################"; cd $dir; $@; cd $TOP_DIR; done; }
 svn_co_project() { CMD=$(echo $1 | ruby -F/ -ane 'chomp; puts "svn co " + $_ + " " + $F[-2]'); $CMD; }
 make_sha() { sha256sum $1 > ${1}.sha256sum; }
 rm_local_mods() { svn st * | grep "^?" | awk '{print $2;}' | xargs rm -rfv; }
@@ -37,4 +37,6 @@ alias open='gnome-open'
 
 alias git_browse="open $(git remote -v | grep push | cut -f2 | cut -f1 -d' ' | sed 's/:/\//;s/git@/http:\/\//; s/\.git$//;')"
 
-
+autoload -U zmv
+alias mmv='noglob zmv -W'
+alias grc="$HOME/.gvm/groovyserv/current/bin/groovyclient"

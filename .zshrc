@@ -54,6 +54,7 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
+export PATH=$PATH:$HOME/dev_apps/packer/current/
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -86,7 +87,7 @@ export M2_HOME=$HOME/dev_apps/maven/current
 export PATH=$PATH:$M2_HOME/bin
 export PATH=$PATH:$HOME/projects/my_stuff/sandpit/ruby:$HOME/projects/my_stuff/sandpit/groovy
 
-
+IP_ADDR=$(ip -family inet a show eth0  | grep inet | awk '{ print $2 }' | cut -f1 -d'/')
 
 source ~/.nvm/nvm.sh
 
