@@ -37,4 +37,4 @@ alias open='gnome-open'
 
 alias git_browse="open $(git remote -v | grep push | cut -f2 | cut -f1 -d' ' | sed 's/:/\//;s/git@/http:\/\//; s/\.git$//;')"
 
-
+alias grc='groovyclient'
