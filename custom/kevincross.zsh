@@ -39,4 +39,5 @@ alias git_browse="open $(git remote -v | grep push | cut -f2 | cut -f1 -d' ' | s
 
 autoload -U zmv
 alias mmv='noglob zmv -W'
-alias grc="$HOME/.gvm/groovyserv/current/bin/groovyclient"
+#alias grc="$HOME/.gvm/groovyserv/current/bin/groovyclient"
+alias grc='groovyclient'
