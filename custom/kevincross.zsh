@@ -41,3 +41,8 @@ autoload -U zmv
 alias mmv='noglob zmv -W'
 #alias grc="$HOME/.gvm/groovyserv/current/bin/groovyclient"
 alias grc='groovyclient'
+
+alias ant='$HOME/dev_apps/ant/current/bin/ant'
+
+eval "$(chef shell-init zsh)"
+
