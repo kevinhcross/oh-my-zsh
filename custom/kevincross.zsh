@@ -43,6 +43,7 @@ alias mmv='noglob zmv -W'
 alias grc='groovyclient'
 
 alias ant='$HOME/dev_apps/ant/current/bin/ant'
+alias gw='./gradlew'
 
 eval "$(chef shell-init zsh)"
 
