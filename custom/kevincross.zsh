@@ -44,6 +44,7 @@ alias grc='groovyclient'
 
 alias ant='$HOME/dev_apps/ant/current/bin/ant'
 alias gw='./gradlew'
+alias dcom='docker-compose'
 
 eval "$(chef shell-init zsh)"
 
