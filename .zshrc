@@ -90,7 +90,9 @@ export M2_HOME=$HOME/dev_apps/maven/current
 export PATH=$PATH:$M2_HOME/bin
 export PATH=$PATH:$HOME/projects/my_stuff/sandpit/ruby:$HOME/projects/my_stuff/sandpit/groovy
 
-IP_ADDR=$(ip -family inet a show eth0  | grep inet | awk '{ print $2 }' | cut -f1 -d'/')
+IP_ADDR=$(ip -family inet a show eno1  | grep inet | awk '{ print $2 }' | cut -f1 -d'/')
+
+alias ts='gvim + ~/projects/kc185092/yellow_belt_timesheet_tool/data/current'
 
 source ~/.nvm/nvm.sh
 
