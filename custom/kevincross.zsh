@@ -48,5 +48,5 @@ alias gw='./gradlew'
 alias dk='docker'
 alias dkc='docker-compose'
 
-eval "$(chef shell-init zsh)"
+#eval "$(chef shell-init zsh)"
 
