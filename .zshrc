@@ -99,7 +99,8 @@ source ~/.nvm/nvm.sh
 #PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
+eval "$(chef shell-init zsh)"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-eval "$(chef shell-init zsh)"
