@@ -27,7 +27,8 @@ alias lt='l -rt'
 alias lss='l | sort -h -k 5'
 
 alias -g L='|& less -iR'
-alias -g LOG='|& tee out_$(date '+%Y%m%dT%H%M%S').log'
+alias -g TSLOG='|& tee out_$(date '+%Y%m%dT%H%M%S').log'
+alias -g LOG='|& tee log'
 alias -g XG='| xargs egrep'
 alias -g X='| xargs'
 alias ag="ag --pager 'less -iR'"
