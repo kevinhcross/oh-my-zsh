@@ -103,6 +103,9 @@ eval "$(chef shell-init zsh)"
 
 eval `dircolors ~/.dir_colors/dircolors`
 
+export PATH=$PATH:~/.minishift
+export PATH="$PATH:/home/kevincross/.fabric8/bin"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
