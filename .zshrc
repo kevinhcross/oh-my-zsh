@@ -58,6 +58,7 @@ export PATH=$PATH:$GOROOT/bin
 export GOPATH=$HOME/projects/golang
 # export MANPATH="/usr/local/man:$MANPATH"
 export PATH=$PATH:$HOME/dev_apps/packer/current/
+export PATH=$PATH:$HOME/dev_apps/vault
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
