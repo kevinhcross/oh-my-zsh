@@ -50,3 +50,8 @@ alias dkc='docker-compose'
 
 #eval "$(chef shell-init zsh)"
 
+fpath=($HOME/.oh-my-zsh/custom/completion/gradle $fpath)
+fpath=($HOME/.oh-my-zsh/custom/completion/docker-compose $fpath)
+autoload -Uz compinit && compinit -i
+
+
