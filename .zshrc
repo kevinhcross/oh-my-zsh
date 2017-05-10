@@ -109,6 +109,9 @@ export PATH="$PATH:${HOME}/tools/minishift/current"
 export PATH="$PATH:${HOME}/.minishift/cache/oc/v1.4.1"
 export PATH="$PATH:/home/kevincross/.fabric8/bin"
 
+# do this so I am not using the version of git that comes with the ChefDK
+export PATH="/usr/bin:$PATH"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
