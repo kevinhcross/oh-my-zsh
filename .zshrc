@@ -105,9 +105,10 @@ eval "$(chef shell-init zsh)"
 eval `dircolors ~/.dir_colors/dircolors`
 
 #export PATH=$PATH:~/.minishift
-export PATH="$PATH:${HOME}/tools/minishift/current"
-export PATH="$PATH:${HOME}/.minishift/cache/oc/v1.4.1"
-export PATH="$PATH:/home/kevincross/.fabric8/bin"
+#export PATH="$PATH:${HOME}/tools/minishift/current"
+#export PATH="$PATH:${HOME}/.minishift/cache/oc/v1.4.1"
+#export PATH="$PATH:/home/kevincross/.fabric8/bin"
+export PATH="${HOME}/dev_apps/openshift/current:${PATH}"
 
 # do this so I am not using the version of git that comes with the ChefDK
 export PATH="/usr/bin:$PATH"
