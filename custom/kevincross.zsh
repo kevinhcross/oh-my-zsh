@@ -31,7 +31,8 @@ alias -g TSLOG='|& tee out_$(date '+%Y%m%dT%H%M%S').log'
 alias -g LOG='|& tee log'
 alias -g XG='| xargs egrep'
 alias -g X='| xargs'
-alias ag="ag --pager 'less -iR'"
+#alias ag="ag --pager 'less -iR'"
+alias ag="ag --nopager"
 
 alias vlog='ls -rt1 out*log | tail -n 1 | xargs less -iR'
 alias open='gnome-open'
