@@ -114,6 +114,8 @@ export PATH="${HOME}/dev_apps/kubectl/current:${PATH}"
 # do this so I am not using the version of git that comes with the ChefDK
 export PATH="/usr/bin:$PATH"
 
+source <(oc completion zsh)
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
