@@ -60,6 +60,10 @@ export GOPATH=$HOME/projects/golang
 export PATH=$PATH:$HOME/dev_apps/packer/current/
 export PATH=$PATH:$HOME/dev_apps/vault
 
+export LOCATE_DIR=${HOME}/var/lib/mlocate
+export LOCATE_PATH=${LOCATE_DIR}/mlocate.db
+export DBPATH=${LOCATE_DIR}/mlocate.db
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
