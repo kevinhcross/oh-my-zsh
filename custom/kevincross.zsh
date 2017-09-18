@@ -49,10 +49,17 @@ alias gw='./gradlew'
 alias dk='docker'
 alias dkc='docker-compose'
 
+if [[ -d ${HOME}/dev_apps/kompose/current ]]; then
+  export PATH=${PATH}:${HOME}/dev_apps/kompose/current
+fi
+
 #eval "$(chef shell-init zsh)"
 
 fpath=($HOME/.oh-my-zsh/custom/completion/gradle $fpath)
 fpath=($HOME/.oh-my-zsh/custom/completion/docker-compose $fpath)
 autoload -Uz compinit && compinit -i
 
+if type nvim > /dev/null 2>&1; then
+  alias vi='nvim'
+fi
 
