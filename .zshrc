@@ -116,7 +116,7 @@ export PATH="${HOME}/dev_apps/openshift/current:${PATH}"
 
 # do this so I am not using the version of git that comes with the ChefDK
 export PATH="/usr/bin:$PATH"
-export TERM=screen-256color
+export TERM=xterm-256color
 
 source <(oc completion zsh)
 
