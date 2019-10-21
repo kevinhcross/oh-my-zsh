@@ -21,11 +21,13 @@ function aws_profiles {
 
 compctl -K aws_profiles asp
 
-if _homebrew-installed && _awscli-homebrew-installed ; then
-  _aws_zsh_completer_path=$(brew --prefix)/opt/awscli/libexec/bin/aws_zsh_completer.sh
-else
-  _aws_zsh_completer_path=$(which aws_zsh_completer.sh)
-fi
+# This makes my zsh very slow to start as I have brew installed but have not used it for the aws cli
+#if _homebrew-installed && _awscli-homebrew-installed ; then
+#  _aws_zsh_completer_path=$(brew --prefix)/opt/awscli/libexec/bin/aws_zsh_completer.sh
+#else
+#  _aws_zsh_completer_path=$(which aws_zsh_completer.sh)
+#fi
+_aws_zsh_completer_path=$(which aws_zsh_completer.sh)
 
 [ -x $_aws_zsh_completer_path ] && source $_aws_zsh_completer_path
 unset _aws_zsh_completer_path
