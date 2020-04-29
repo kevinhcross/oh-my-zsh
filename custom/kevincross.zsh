@@ -1,18 +1,12 @@
 
 #ZSH_THEME="smt"
 #ZSH_THEME="kevincross"
-ZSH_THEME="khcsvn"
 
 ##########################################################################################
 # functions
 ##########################################################################################
 gvi() { gvim --remote-silent $@ & }
 do_in_all() { TOP_DIR=$(pwd); for dir in $(find . -maxdepth 1 -type d  | grep -v "\.$"); do echo; echo "## $dir ###################################################################################################################################################"; cd $dir; $@; cd $TOP_DIR; done; }
-svn_co_project() { CMD=$(echo $1 | ruby -F/ -ane 'chomp; puts "svn co " + $_ + " " + $F[-2]'); $CMD; }
-make_sha() { sha256sum $1 > ${1}.sha256sum; }
-rm_local_mods() { svn st * | grep "^?" | awk '{print $2;}' | xargs rm -rfv; }
-jenkins_trigger() { echo "https://jenkins.ncrcoe.com/jenkins/git/notifyCommit?url=$(git config -l | grep remote.origin.url | cut -f2 -d'=')"; }                                                                               
-jenkins_trigger_arg() { echo "https://jenkins.ncrcoe.com/jenkins/git/notifyCommit?url=$1"; }     
 git_get_http() { git remote -v | grep fetch | awk '{print $2}' | sed 's/:/\//' | sed 's/git@/http:\/\//'; }
 
 
@@ -49,15 +43,17 @@ alias gw='./gradlew'
 alias dk='docker'
 alias dkc='docker-compose'
 
-if [[ -d ${HOME}/dev_apps/kompose/current ]]; then
-  export PATH=${PATH}:${HOME}/dev_apps/kompose/current
-fi
-
 #eval "$(chef shell-init zsh)"
 
-fpath=($HOME/.oh-my-zsh/custom/completion/gradle $fpath)
-fpath=($HOME/.oh-my-zsh/custom/completion/docker-compose $fpath)
-autoload -Uz compinit && compinit -i
+#fpath=($HOME/.oh-my-zsh/custom/completion/gradle $fpath)
+#fpath=($HOME/.oh-my-zsh/custom/completion/docker-compose $fpath)
+#autoload -Uz compinit && compinit -i
+
+autoload -Uz compinit
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit
+done
+compinit -C
 
 if type nvim > /dev/null 2>&1; then
   alias vi='nvim'
